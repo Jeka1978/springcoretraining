@@ -4,10 +4,12 @@ import lombok.Setter;
 import my_spring.InjectRandom;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 /**
  * @author Evgeny Borisov
  */
+@Component
 public class ShakespearQuoter implements Quoter {
     @Value("${shake}")
     private String message;

@@ -5,32 +5,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 
+    <context:component-scan base-package="quoters"/>
 
-    <bean class="quoters.InjectRandomBeanPostProcessor"/>
-    <bean class="my_spring.BeanDefinitionAnalyzerBeanFactoryPostProcessor"/>
-    <context:property-placeholder location="classpath:application.properties"/>
 
-    <context:annotation-config/>
     <!--<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>-->
 
-    <bean id="s" class="java.lang.String">
-        <constructor-arg value="Trust me!"/>
-    </bean>
-    <bean id="talkingRobot" class="quoters.TalkingRobotImpl">
 
-        <property name="quoters">
-            <list>
-                <ref bean="shakespearQuoter"/>
-                <ref bean="terminatorQuoter"/>
-            </list>
-        </property>
-    </bean>
-    <bean id="terminatorQuoter" class="quoters.TerminatorQuoter" destroy-method="killAll">
 
-    </bean>
-
-    <bean id="shakespearQuoter" class="quoters.ShakespearQuoter" primary="true">
-    </bean>
 
 
 </beans>
